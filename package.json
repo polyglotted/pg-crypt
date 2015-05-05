@@ -1,0 +1,25 @@
+{
+  "name": "pg-crypt",
+  "description": "Port of Google Closure's crypt",
+  "version": "0.0.0",
+  "main": "lib/pg-crypt.js",
+  "main-es6": "src/pg-crypt.es6",
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp build",
+    "postinstall": "babel src/ --out-dir lib/"
+  },
+  "author": {
+    "name": "David Haines",
+    "email": "david@polyglotted.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:polyglotted/pg-crypt.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-fibre-tasks": "git+ssh://git@github.com:polyglotted/gulp-fibre-tasks.git"
+  }
+}
