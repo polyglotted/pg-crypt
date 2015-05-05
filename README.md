@@ -1,3 +1,3 @@
-# long
+# pg-crypt
 
-Port of Google Closure's [Long](http://docs.closure-library.googlecode.com/git/local_closure_goog_math_long.js.source.html)
+Port of Google Closure's [Crypt](https://github.com/google/closure-library/blob/master/closure/goog/crypt/crypt.js)
