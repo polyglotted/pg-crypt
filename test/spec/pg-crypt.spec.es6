@@ -4,7 +4,7 @@ describe('Crypt', () => {
   let methods,
       tests,
       UTF8_RANGES_BYTE_ARRAY;
-  
+
   methods = ['stringToUtf8ByteArray', 'utf8ByteArrayToString'];
 
   methods.forEach((method) => {
@@ -30,14 +30,14 @@ describe('Crypt', () => {
     desc: 'ASCII',
     string: 'Hello, world',
     array: [72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]
-  },{
+  }, {
     desc: 'Latin',
     string: 'Sch\u00f6n',
-    array: [83, 99, 104, 195, 182, 110]      
-  },{
+    array: [83, 99, 104, 195, 182, 110]
+  }, {
     desc: 'UTF-8 Char Range Limits',
     string: '\u0000\u007F\u0080\u07FF\u0800\uFFFF',
-    array: UTF8_RANGES_BYTE_ARRAY      
+    array: UTF8_RANGES_BYTE_ARRAY
   }];
 
   tests.forEach((test) => {
@@ -53,7 +53,7 @@ describe('Crypt', () => {
       });
       it('should convert byte array to ' + test.desc + ' string', () => {
         expect(Crypt.byteArrayToString(test.array)).toEqual(test.string);
-      });        
+      });
     }
   });
 });
