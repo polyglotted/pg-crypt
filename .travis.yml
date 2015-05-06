@@ -4,7 +4,13 @@ node_js:
   - "iojs"
 
 before_install:
-  - '[ "${TRAVIS_NODE_VERSION}" != "0.10" ] || npm install -g npm'
-  - 'npm i -g babel'
+  - npm i -g babel
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+
+addons:
+  code_climate:
+    repo_token: 982c84dade1cda77911fd7eba4a84bbba81cb347b8337f9521ff0b2cbd2779cb
+
+after_script:
+  - codeclimate < report/jasmine-coverage/lcov.info
