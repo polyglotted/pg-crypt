@@ -10,5 +10,6 @@ env:
 
 before_install:
   - '[ "${TRAVIS_NODE_VERSION}" != "0.10" ] || npm install -g npm'
+  - 'npm i -g babel'
 
 after_success: cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose && rm -rf ./coverage
