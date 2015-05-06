@@ -20,6 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.8.11",
-    "gulp-fibre-tasks": "https://git@github.com:polyglotted/gulp-fibre-tasks.git"
+    "gulp-fibre-tasks": "^1.0.0"
   }
 }
