@@ -20,6 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.8.11",
-    "gulp-fibre-tasks": "^1.0.0"
+    "gulp-fibre-tasks": "^1.0.2"
   }
 }
