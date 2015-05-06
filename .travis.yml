@@ -1,11 +1,8 @@
-sudo: false
 language: node_js
 node_js:
   - "0.10"
   - "0.12"
   - "iojs"
-env:
-  - NO_WATCH_TESTS=1
 
 before_install:
   - '[ "${TRAVIS_NODE_VERSION}" != "0.10" ] || npm install -g npm'
