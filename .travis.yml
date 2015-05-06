@@ -4,13 +4,9 @@ node_js:
   - "iojs"
 
 before_install:
-  - npm i -g babel
+  - npm i -g babel codeclimate-test-reporter
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
-addons:
-  code_climate:
-    repo_token: 982c84dade1cda77911fd7eba4a84bbba81cb347b8337f9521ff0b2cbd2779cb
-
 after_script:
-  - codeclimate < report/jasmine-coverage/lcov.info
+  - CODECLIMATE_REPO_TOKEN=982c84dade1cda77911fd7eba4a84bbba81cb347b8337f9521ff0b2cbd2779cb codeclimate < lcov.info
