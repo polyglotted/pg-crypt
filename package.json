@@ -13,6 +13,10 @@
     "name": "David Haines",
     "email": "david@polyglotted.io"
   },
+  "contributors": [{
+    "name": "Ahmed Nuaman",
+    "email": "ahmed@polyglotted.io"
+  }],
   "repository": {
     "type": "git",
     "url": "git@github.com:polyglotted/pg-crypt.git"
@@ -20,6 +24,6 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-fibre-tasks": "^1.0.2"
+    "gulp-fibre-tasks": "^1.0.4"
   }
 }
