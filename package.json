@@ -1,6 +1,6 @@
 {
   "name": "pg-crypt",
-  "description": "Port of Google Closure's crypt functions",
+  "description": "Port of Google Closure's crypt package",
   "version": "0.8.2",
   "main": "lib/pg-crypt.js",
   "main-es6": "src/pg-crypt.es6",
