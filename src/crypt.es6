@@ -23,7 +23,7 @@ class Crypt {
    * @return {!Array<number>} Array of {0,255} integers for the given string.
    */
   static hexToByteArray (hexString) {
-    assert.equals(hexString.length % 2, 0, 'Key string length must be multiple of 2');
+    assert.equal(hexString.length % 2, 0, 'Key string length must be multiple of 2');
     let arr = [],
         i;
     for (i = 0; i < hexString.length; i += 2) {
