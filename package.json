@@ -6,8 +6,7 @@
   "main-es6": "src/pg-crypt.es6",
   "scripts": {
     "test": "gulp test",
-    "build": "gulp build",
-    "postinstall": "babel src/ --out-dir lib/"
+    "build": "gulp build"
   },
   "author": {
     "name": "David Haines",
@@ -19,6 +18,11 @@
       "email": "ahmed@polyglotted.io"
     }
   ],
+  "files": [
+    "dist/",
+    "lib/",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:polyglotted/pg-crypt.git"
@@ -26,10 +30,10 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-fibre-tasks": "^1.0.4"
+    "gulp-fibre-tasks": "^1.0.6"
   },
   "dependencies": {
     "chai": "^2.3.0",
-    "lodash": "^3.8.0"
+    "lodash": "^3.9.1"
   }
 }
