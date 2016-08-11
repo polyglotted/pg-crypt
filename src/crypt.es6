@@ -1,4 +1,3 @@
-import {assert} from 'chai';
 import _ from 'lodash';
 
 class Crypt {
@@ -23,7 +22,9 @@ class Crypt {
    * @return {!Array<number>} Array of {0,255} integers for the given string.
    */
   static hexToByteArray (hexString) {
-    assert.equal(hexString.length % 2, 0, 'Key string length must be multiple of 2');
+    if (hexString.length % 2 !== 0) {
+      throw Error('Key string length must be multiple of 2');
+    }
     let arr = [],
         i;
     for (i = 0; i < hexString.length; i += 2) {

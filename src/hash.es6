@@ -39,7 +39,7 @@ class Hash {
    */
   reset () {
     throw new Error('reset must be overridden');
-  }  
+  }
 
   /**
    * Adds a byte array (array with values in [0-255] range) or a string (might

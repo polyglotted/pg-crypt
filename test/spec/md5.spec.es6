@@ -1,12 +1,10 @@
 import Md5 from '../../src/md5';
 import {byteArrayToHex} from '../../src/crypt';
-import HashTest from '../helper/hash-tester';
 
 describe('Md5', () => {
   it('should handle empty array', () => {
     let md5 = new Md5(),
-        empty = new Md5().digest(),
-        reset = new Md5();
+        empty = new Md5().digest();
     md5.reset();
     md5.update([]);
     expect(empty).toEqual(md5.digest());

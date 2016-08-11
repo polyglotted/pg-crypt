@@ -1,6 +1,5 @@
 import Sha1 from '../../src/sha1';
 import {byteArrayToHex} from '../../src/crypt';
-import HashTest from '../helper/hash-tester';
 
 describe('Sha1', () => {
   let tests = [{

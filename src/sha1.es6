@@ -43,7 +43,7 @@ import _ from 'lodash';
 class Sha1 extends Hash {
   constructor () {
     super();
-    
+
     this.blockSize = 512 / 8;
 
     /**

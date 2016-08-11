@@ -19,14 +19,14 @@ class HashTester {
     hash.update('aB');
     golden2 = hash.digest();
 
-    it ('Two different inputs resulted in a hash collision', () => {
+    it('Two different inputs resulted in a hash collision', () => {
       expect(golden1).not.toEqual(golden2);
     });
 
     // Empty hash.
     hash.reset();
     empty = hash.digest();
-    it ('Empty hash collided with a non-trivial one', () => {
+    it('Empty hash collided with a non-trivial one', () => {
       expect(golden1).not.toEqual(empty);
       expect(golden2).not.toEqual(empty);
     });
@@ -34,35 +34,35 @@ class HashTester {
     // Zero-length array update.
     hash.reset();
     hash.update([]);
-    it ('Updating with an empty array did not give an empty hash', () => {
+    it('Updating with an empty array did not give an empty hash', () => {
       expect(empty).toEqual(hash.digest());
     });
 
     // // Zero-length string update.
     hash.reset();
     hash.update('');
-    it ('Updating with an empty string did not give an empty hash', () => {
+    it('Updating with an empty string did not give an empty hash', () => {
       expect(empty).toEqual(hash.digest());
     });
 
     // Recompute the first hash.
     hash.reset();
     hash.update([97, 158]);
-    it ('The reset did not produce the initial state', () => {
+    it('The reset did not produce the initial state', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
     // Check for a trivial collision.
     hash.reset();
     hash.update([158, 97]);
-    it ('Swapping bytes resulted in a hash collision', () => {
+    it('Swapping bytes resulted in a hash collision', () => {
       expect(golden1).not.toEqual(hash.digest());
     });
 
     // Compare array and string input.
     hash.reset();
     hash.update([97, 66]);
-    it ('String and array inputs should give the same result', () => {
+    it('String and array inputs should give the same result', () => {
       expect(golden2).toEqual(hash.digest());
     });
 
@@ -70,7 +70,7 @@ class HashTester {
     hash.reset();
     hash.update('a');
     hash.update([158]);
-    it ('Partial updates resulted in a different hash', () => {
+    it('Partial updates resulted in a different hash', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
@@ -78,7 +78,7 @@ class HashTester {
     hash.reset();
     hash.update('aB', 0);
     hash.update([97, 158, 32], 2);
-    it ('Updating with an explicit buffer length did not work', () => {
+    it('Updating with an explicit buffer length did not work', () => {
       expect(golden1).toEqual(hash.digest());
     });
   }
@@ -111,7 +111,7 @@ class HashTester {
     hash.reset();
     hash.update(message);
     hash.update('123');
-    it ('Almost fill a block, then overflow', () => {
+    it('Almost fill a block, then overflow', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
@@ -119,7 +119,7 @@ class HashTester {
     hash.reset();
     hash.update(message + '1');
     hash.update('23');
-    it ('Fill a block', () => {
+    it('Fill a block', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
@@ -127,14 +127,14 @@ class HashTester {
     hash.reset();
     hash.update(message + '12');
     hash.update('3');
-    it ('Overflow a block', () => {
+    it('Overflow a block', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
     // Test single overflow with an array.
     hash.reset();
     hash.update(stringToByteArray(message + '123'));
-    it ('Test single overflow with an array', () => {
+    it('Test single overflow with an array', () => {
       expect(golden1).toEqual(hash.digest());
     });
 
@@ -142,7 +142,7 @@ class HashTester {
     hash.reset();
     hash.update(message);
     hash.update(message + '123');
-    it ('Almost fill a block, then overflow this and the next block', () => {
+    it('Almost fill a block, then overflow this and the next block', () => {
       expect(golden2).toEqual(hash.digest());
     });
 
@@ -150,7 +150,7 @@ class HashTester {
     hash.reset();
     hash.update(message + message + '12');
     hash.update('3');
-    it ('Fill two blocks', () => {
+    it('Fill two blocks', () => {
       expect(golden2).toEqual(hash.digest());
     });
 
@@ -158,7 +158,7 @@ class HashTester {
     hash.reset();
     hash.update(stringToByteArray(message));
     hash.update(stringToByteArray(message + '123'));
-    it ('Test double overflow with an array', () => {
+    it('Test double overflow with an array', () => {
       expect(golden2).toEqual(hash.digest());
     });
   }
